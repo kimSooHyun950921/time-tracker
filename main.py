@@ -37,7 +37,6 @@ class Application(tk.Frame):
     def create_frame(self, master):
         # master Frame
         frame = tk.Frame(master=master, relief=tk.RAISED, borderwidth=1)
-        log_frame = tk.Frame(master=master, relief=tk.RAISED, borderwidth=1)
         for i in range(self.ROWS):
             frame.grid_rowconfigure(i, weight=1)
         for i in range(self.COLUMNS):
