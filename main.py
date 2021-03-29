@@ -12,10 +12,11 @@ FLAGS = _ = None
 TZ_SEOUL = datetime.timezone(datetime.timedelta(hours=9))
 TZ_UTC = datetime.timezone(datetime.timedelta())
 
+
 class Application(tk.Frame):
     ROWS = 4
     COLUMNS = 4
-    
+
     def __init__(self, path, master=None):
         # Init root
         super().__init__(master)
@@ -36,10 +37,12 @@ class Application(tk.Frame):
     def create_frame(self, master):
         # master Frame
         frame = tk.Frame(master=master, relief=tk.RAISED, borderwidth=1)
+        log_frame = tk.Frame(master=master, relief=tk.RAISED, borderwidth=1)
         for i in range(self.ROWS):
             frame.grid_rowconfigure(i, weight=1)
         for i in range(self.COLUMNS):
             frame.grid_columnconfigure(i, weight=1)
+
         # label: Start time
         label_stime = tk.Label(master=frame, text='Start time')
         label_stime.grid(row=0, column=0, padx=10, pady=10, sticky=tk.NSEW)
@@ -64,9 +67,11 @@ class Application(tk.Frame):
         # button: Record
         self.button_record = tk.Button(master=frame, text='Record')
         self.button_record.grid(row=3, column=0, columnspan=4, sticky=tk.NSEW, padx=10, pady=10)
-        
+        # log: textbox
+        self.logging_box = tk.Text(master=frame, width=30, height=100)
+        self.logging_box.grid(row=0, column=4, rowspan=4, sticky=tk.NS, padx=10, pady=10)
         # pack
-        frame.pack(expand=2, fill='both',  side=tk.LEFT)
+        frame.pack(expand=4, fill='both',  side=tk.LEFT)
 
     def quit(self):
         if DEBUG:
@@ -149,7 +154,7 @@ def main():
         print(f'Unparsed arguments {_}')
 
     root = tk.Tk()
-    root.geometry('256x256')
+    root.geometry('512x256')
     root.title('Time Tracker')
     root.grid_rowconfigure(0, weight=1)
     root.grid_columnconfigure(0, weight=1)
