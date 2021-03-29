@@ -12,7 +12,6 @@ FLAGS = _ = None
 TZ_SEOUL = datetime.timezone(datetime.timedelta(hours=9))
 TZ_UTC = datetime.timezone(datetime.timedelta())
 
-
 class Application(tk.Frame):
     ROWS = 4
     COLUMNS = 4
