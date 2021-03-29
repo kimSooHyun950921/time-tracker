@@ -55,20 +55,24 @@ class Application(tk.Frame):
         label_category.grid(row=1, column=0, sticky=tk.NSEW)
         # combobox: Category
         self.combo_category = ttk.Combobox(master=frame)
-        self.combo_category.grid(row=1, column=1, columnspan=3, padx=10, pady=10, sticky=tk.EW)
+        self.combo_category.grid(row=1, column=1, columnspan=3, 
+                                 padx=10, pady=10, sticky=tk.EW)
         # label: Task
         label_task = tk.Label(master=frame, text='Task')
-        label_task.grid(row=2, column=0, sticky=tk.NSEW, padx=10, pady=10)
+        label_task.grid(row=2, column=0, sticky=tk.NSEW, 
+                        padx=10, pady=10)
         # textbox: Task
         self.text_task = tk.Text(master=frame, width=1, height=1)
-        self.text_task.grid(row=2, column=1, columnspan=3, sticky=tk.NSEW, padx=10, pady=10)
+        self.text_task.grid(row=2, column=1, columnspan=3, 
+                            sticky=tk.NSEW, padx=10, pady=10)
         # button: Record
         self.button_record = tk.Button(master=frame, text='Record')
-        self.button_record.grid(row=3, column=0, columnspan=4, sticky=tk.NSEW, padx=10, pady=10)
+        self.button_record.grid(row=3, column=0, columnspan=4, 
+                                sticky=tk.NSEW, padx=10, pady=10)
         # log: textbox
         self.logging_box = tk.Text(master=frame, width=30, height=100)
-        self.logging_box.grid(row=0, column=4, rowspan=4, sticky=tk.NS, 
-                              padx=10, pady=10)
+        self.logging_box.grid(row=0, column=4, rowspan=4, 
+                              sticky=tk.NS, padx=10, pady=10)
         # pack
         frame.pack(expand=4, fill='both',  side=tk.LEFT)
 
