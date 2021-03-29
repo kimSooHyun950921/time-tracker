@@ -67,7 +67,8 @@ class Application(tk.Frame):
         self.button_record.grid(row=3, column=0, columnspan=4, sticky=tk.NSEW, padx=10, pady=10)
         # log: textbox
         self.logging_box = tk.Text(master=frame, width=30, height=100)
-        self.logging_box.grid(row=0, column=4, rowspan=4, sticky=tk.NS, padx=10, pady=10)
+        self.logging_box.grid(row=0, column=4, rowspan=4, sticky=tk.NS, 
+                              padx=10, pady=10)
         # pack
         frame.pack(expand=4, fill='both',  side=tk.LEFT)
 
